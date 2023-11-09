@@ -45,7 +45,7 @@ function App() {
     const point = stage.getPointerPosition();
     let lastLine = lines[lines.length - 1];
     // add point
-    lastLine.points = lastLine.points.concat([point.x, point.y]);
+    lastLine.points = lastLine.points.slice(0, 2).concat([point.x, point.y]);
 
     // replace last
     lines.splice(lines.length - 1, 1, lastLine);
